@@ -5,11 +5,12 @@ class HomePageLocators:
     # локаторы на главной странице
 
     COOKIE_BUTTON = (By.ID, "rcc-confirm-button")  # кнопка закрыть куки
-    YA_LOGO_BUTTON = (By.XPATH, "//a[@class='Header_LogoYandex__3TSOI']")  # кнопка лого яндекса
-    SCOOTER_LOGO_BUTTON = (By.XPATH, "//a[@class='Header_LogoScooter__3lsAR']")  # кнопка лого самокат
-    ORDER_BUTTON_TOP = (By.XPATH, "//button[@class='Button_Button__ra12g']")  # кнопка заказть вверху страницы
-    ORDER_BUTTON_LOWER = (By.XPATH, "//div[contains(@class, 'Home_FinishButton')]/button[contains(@class, "
-                                    "'Button_Button')]")  # кнопка заказать внизу страницы
+    YA_LOGO_BUTTON = (By.XPATH, "//*[@alt='Yandex']")  # кнопка лого яндекса
+    SCOOTER_LOGO_BUTTON = (By.XPATH, "//*[@alt='Scooter']")  # кнопка лого самокат
+    ORDER_BUTTON_TOP = (By.XPATH, "//*[contains(@class, 'Header_Nav')]/button[text()='Заказать']")
+    # кнопка заказть вверху страницы
+    ORDER_BUTTON_LOWER = (By.XPATH, "//div[contains(@class, 'Home_FinishButton')]/button[text()='Заказать']")
+    # кнопка заказать внизу страницы
     SCOOTER_MAIN_TEXT = (By.XPATH, "//div[@class='Home_Header__iJKdX']")  # текст на главной странице самоката
 
     # локаторы вопросов

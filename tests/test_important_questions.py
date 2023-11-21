@@ -1,6 +1,7 @@
 import allure
 import pytest
 import data_test
+from data import Urls
 
 from locators.home_page_locators import HomePageLocators
 from pages.home_page import HomePage
@@ -21,7 +22,7 @@ class TestImportantQuestions:
     ])
     def test_answers_fqa(self, driver, questions_locators, answers_locators, true_answers):
         home_page = HomePage(driver)
-        home_page.open('https://qa-scooter.praktikum-services.ru/')
+        home_page.open(Urls.BASE_URL)
         home_page.close_cookie()
         home_page.click_to_question(questions_locators)
         assert home_page.check_to_answer(answers_locators) == true_answers

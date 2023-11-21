@@ -4,6 +4,7 @@ from selenium.webdriver import Keys
 from locators.order_page_locators import OrderPageLocators
 from pages.base_page import BasePage
 import random
+from data_test import Users
 
 
 class OrderPage(BasePage):
@@ -65,6 +66,20 @@ class OrderPage(BasePage):
         success_order = self.find_element(OrderPageLocators.SUCCESS_WINDOW)
         return success_order is not None
 
+    @allure.step('Заполнение полей при создании заказа')
+    def fill_order_form(self, users):
+        self.fill_name(users.NAME)
+        self.fill_surname(users.SURNAME)
+        self.fill_address(users.ADDRESS)
+        self.fill_metro(users.METRO)
+        self.fill_phone(users.PHONE)
+        self.go_to_next()
+        self.fill_delivery_date(users.DATE)
+        self.choose_rent_time()
+        self.choose_color()
+        self.fill_comment(users.COMMENT)
+        self.go_to_order()
+        self.accept_order()
 
 
 
